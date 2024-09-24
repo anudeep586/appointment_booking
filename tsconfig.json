@@ -1,0 +1,13 @@
+
+{
+  "compilerOptions": {
+    "types": ["jest", "node"],
+      "module":"CommonJS",
+      "target": "es2017",
+      "noImplicitAny": true,
+      "outDir": "./dist",
+      "sourceMap": true
+  },
+  "include": ["./src/**/*", "user.ts"]
+  
+}
