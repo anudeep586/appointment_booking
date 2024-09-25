@@ -1,5 +1,4 @@
-import { AppointMentBookingService } from './client'; // Adjust the path as necessary
-import { Appointment } from './types'; // Adjust the path as necessary
+import { AppointMentBookingService } from './client';
 
 describe('AppointMentBookingService', () => {
   let service: AppointMentBookingService;

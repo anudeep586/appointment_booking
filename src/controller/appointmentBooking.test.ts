@@ -13,7 +13,6 @@ describe('AppointMentBookingController', () => {
   let ctx: Context;
 
   beforeEach(() => {
-    // Mocking the service methods
     appointmentBookingService = {
       bookAppointment: jest.fn(),
       getAppointmentDetails: jest.fn(),
@@ -22,10 +21,8 @@ describe('AppointMentBookingController', () => {
       modifyAppointment: jest.fn(),
     };
 
-    // Initialize the controller with the mocked service
     appointmentBookingController = new AppointMentBookingController(appointmentBookingService);
 
-    // Create a mock Koa Context object
     ctx = {
       request: { body: {}, },
       params: {},

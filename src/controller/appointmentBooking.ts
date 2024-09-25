@@ -25,7 +25,7 @@ export class AppointMentBookingController implements IAppointMentBooking {
         appointmentDetails
       );
       ctx.status = 201;
-      ctx.body = appointment;
+      ctx.body = {data:appointment};
     } catch (err) {
       ctx.body = err.message || "INTERNAL_SERVER_ERROR";
       ctx.status = 500;
@@ -44,7 +44,7 @@ export class AppointMentBookingController implements IAppointMentBooking {
       const appointment =
         await this.appointmentBookingService.getAppointmentDetails(email);
       ctx.status = 200;
-      ctx.body = appointment;
+      ctx.body = {data: appointment};
     } catch (err) {
       ctx.body = err.message || "INTERNAL_SERVER_ERROR";
       ctx.status = 500;
@@ -58,7 +58,7 @@ export class AppointMentBookingController implements IAppointMentBooking {
           ctx.params.doctorName
         );
       ctx.status = 200;
-      ctx.body = appointments;
+      ctx.body = {data: appointments};
     } catch (err) {
       ctx.body = err.message || "INTERNAL_SERVER_ERROR";
       ctx.status = 500;
@@ -78,7 +78,7 @@ export class AppointMentBookingController implements IAppointMentBooking {
         timeSlot
       );
       if (success) {
-        ctx.body = "Appointment canceled successfully.";
+        ctx.body = {data: "Appointment canceled successfully."};
       } else {
         ctx.status = 404;
         ctx.body = "Appointment not found.";
@@ -103,8 +103,8 @@ export class AppointMentBookingController implements IAppointMentBooking {
           originalTimeSlot,
           newTimeSlot
         );
-      ctx.body = updatedAppointment;
-      ctx.status=204
+      ctx.body = {data: updatedAppointment};
+      ctx.status=200
     } catch (err) {
       ctx.status = 400;
       ctx.body = err.message;
