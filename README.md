@@ -13,7 +13,7 @@ Installation:
 Clone the repository and run npm install to install dependencies.
 
 Usage:
-Start the server with node <your-entry-file>.js and access the API on http://localhost:8080.
+Start the server with ```npm run watch-server``` and access the API on http://localhost:8080.
 
 Technologies Used:
 Koa, TypeScript, UUID for unique identifiers, and various Koa middleware for logging and body parsing.
